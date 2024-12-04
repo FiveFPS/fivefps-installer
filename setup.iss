@@ -2,7 +2,7 @@
 #define AppName "FiveFPS"
 #define AppPublisher "FIVEFPS LTDA"
 #define AppPublisherURL "https://fivefps.com"
-#define AppVersion "2.5.4"
+#define AppVersion "2.7.7"
 #define DefaultDirName "C:\FiveFPS"
 #define IconPath DefaultDirName + "\fivefps.exe"
 
@@ -87,26 +87,26 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 [Files]
 ; Copie os arquivos necessários
 Source: "bin\*"; DestDir: "{app}"; Flags: recursesubdirs createallsubdirs
-Source: "packages\windowsdesktop-runtime-6.0.25-win-x64.exe"; DestDir: "{tmp}"; Flags: deleteafterinstall
-Source: "packages\aspnetcore-runtime-6.0.25-win-x64.exe"; DestDir: "{tmp}"; Flags: deleteafterinstall
-Source: "packages\dotnet-runtime-6.0.25-win-x86.exe"; DestDir: "{tmp}"; Flags: deleteafterinstall
-Source: "packages\dotnet-runtime-6.0.25-win-x64.exe"; DestDir: "{tmp}"; Flags: deleteafterinstall
-Source: "packages\aspnetcore-runtime-6.0.25-win-x86.exe"; DestDir: "{tmp}"; Flags: deleteafterinstall
+;Source: "packages\windowsdesktop-runtime-6.0.25-win-x64.exe"; DestDir: "{tmp}"; Flags: deleteafterinstall
+;Source: "packages\aspnetcore-runtime-6.0.25-win-x64.exe"; DestDir: "{tmp}"; Flags: deleteafterinstall
+;Source: "packages\dotnet-runtime-6.0.25-win-x86.exe"; DestDir: "{tmp}"; Flags: deleteafterinstall
+;Source: "packages\dotnet-runtime-6.0.25-win-x64.exe"; DestDir: "{tmp}"; Flags: deleteafterinstall
+;Source: "packages\aspnetcore-runtime-6.0.25-win-x86.exe"; DestDir: "{tmp}"; Flags: deleteafterinstall
+;Source: "packages\dotnet-framework.exe"; DestDir: "{tmp}"; Flags: deleteafterinstall
 Source: "packages\VC_redist.x64.exe"; DestDir: "{tmp}"; Flags: deleteafterinstall
 Source: "packages\VC_redist.x86.exe"; DestDir: "{tmp}"; Flags: deleteafterinstall
-Source: "packages\dotnet-framework.exe"; DestDir: "{tmp}"; Flags: deleteafterinstall
 Source: "packages\MicrosoftEdgeWebView2RuntimeInstallerX64.exe"; DestDir: "{tmp}"; Flags: deleteafterinstall
 
 [Run]
-Filename: "{tmp}\windowsdesktop-runtime-6.0.25-win-x64.exe"; Parameters: "/q /norestart"; StatusMsg: "{cm:dotnetcoremsg}"; Flags: waituntilterminated
-Filename: "{tmp}\aspnetcore-runtime-6.0.25-win-x64.exe"; Parameters: "/q /norestart"; StatusMsg: "{cm:dotnetcoremsg}"; Flags: waituntilterminated
-Filename: "{tmp}\dotnet-runtime-6.0.25-win-x86.exe"; Parameters: "/q /norestart"; StatusMsg: "{cm:dotnetcoremsg}"; Flags: waituntilterminated
-Filename: "{tmp}\dotnet-runtime-6.0.25-win-x64.exe"; Parameters: "/q /norestart"; StatusMsg: "{cm:dotnetcoremsg}"; Flags: waituntilterminated
-Filename: "{tmp}\aspnetcore-runtime-6.0.25-win-x86.exe"; Parameters: "/q /norestart"; StatusMsg: "{cm:dotnetcoremsg}"; Flags: waituntilterminated
+;Filename: "{tmp}\windowsdesktop-runtime-6.0.25-win-x64.exe"; Parameters: "/q /norestart"; StatusMsg: "{cm:dotnetcoremsg}"; Flags: waituntilterminated
+;Filename: "{tmp}\aspnetcore-runtime-6.0.25-win-x64.exe"; Parameters: "/q /norestart"; StatusMsg: "{cm:dotnetcoremsg}"; Flags: waituntilterminated
+;Filename: "{tmp}\dotnet-runtime-6.0.25-win-x86.exe"; Parameters: "/q /norestart"; StatusMsg: "{cm:dotnetcoremsg}"; Flags: waituntilterminated
+;Filename: "{tmp}\dotnet-runtime-6.0.25-win-x64.exe"; Parameters: "/q /norestart"; StatusMsg: "{cm:dotnetcoremsg}"; Flags: waituntilterminated
+;Filename: "{tmp}\aspnetcore-runtime-6.0.25-win-x86.exe"; Parameters: "/q /norestart"; StatusMsg: "{cm:dotnetcoremsg}"; Flags: waituntilterminated
+;Filename: "{tmp}\dotnet-framework.exe"; Parameters: "/q /norestart"; StatusMsg: "{cm:dotnetframeworkmsg}"; Flags: waituntilterminated
 Filename: "{tmp}\VC_redist.x64.exe"; Parameters: "/q /norestart"; StatusMsg: "{cm:dotnetcoremsg}"; Flags: waituntilterminated
 Filename: "{tmp}\VC_redist.x86.exe"; Parameters: "/q /norestart"; StatusMsg: "{cm:dotnetcoremsg}"; Flags: waituntilterminated
-Filename: "{tmp}\dotnet-framework.exe"; Parameters: "/q /norestart"; StatusMsg: "{cm:dotnetframeworkmsg}"; Flags: waituntilterminated
-Filename: "{tmp}\MicrosoftEdgeWebView2RuntimeInstallerX64.exe"; Parameters: "/q /norestart"; StatusMsg: "{cm:webviewruntimemsg}"; Flags: waituntilterminated
+Filename: "{tmp}\MicrosoftEdgeWebView2RuntimeInstallerX64.exe"; Parameters: "/silent /install"; StatusMsg: "{cm:webviewruntimemsg}"; Flags: waituntilterminated
 
 [UninstallRun]
 Filename: "schtasks"; Parameters: "/Delete /TN ""FiveFPS Startup"" /F"; Flags: runhidden
